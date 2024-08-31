@@ -15,7 +15,15 @@ const pool = new Pool({
   });
 
 app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, '', '../client/pages/index.html'));
+});
+
+app.get('/registration', (req, res) => {
     res.sendFile(path.join(__dirname, '', '../client/pages/signup.html'));
+});
+
+app.get('/login', (req, res) => {
+  res.sendFile(path.join(__dirname, '', '../client/pages/login.html'));
 });
 
 app.get('/users', (req, res) => {
@@ -46,7 +54,7 @@ app.post('/register', (req, res) => {
 app.post('/login', (req, res) => {
     const { email, password } = req.body;
     
-    pool.query('SELECT * FROM users WHERE email = $4 AND password = $5', [email, password], (error, results) => {
+    pool.query('SELECT * FROM users WHERE email = $1 AND password = $2', [email, password], (error, results) => {
       if (error) {
         throw error;
       }
