@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Page</title>
+    <script src="/scripts/script.js"></script> 
+</head>
+<body>
+    <h1>Signup Page</h1>
+    <form name="register" onsubmit="return confirm_password()">
+        <div>
+            <label for="fname">First Name:</label><br>
+            <input type="text" id="fname" name="fname" required><br>
+
+            <label for="lname">Last Name:</label><br>
+            <input type="text" id="lname" name="lname" required><br>
+
+            <label for="email">Email:</label><br>
+            <input type="text" id="email" name="email" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" required><br>
+
+            <label for="password">Password:</label><br>
+            <input type="text" id="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+            title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required><br>
+
+            <label for="cpassword">Confirm Password:</label><br>
+            <input type="text" id="cpassword" name="cpassword" required><br>
+
+            <button type="submit" >Register</button>
+        </div>
+
+        <div class="signin">
+            <p>Already have an account? <a href="/login.html">Sign in</a></p>
+        </div>
+</body>
+</html>
