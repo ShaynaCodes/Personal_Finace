@@ -8,13 +8,13 @@
 </head>
 <body>
     <h1>Signup Page</h1>
-    <form name="register" onsubmit="return confirm_password()">
+    <form action='/register' method="POST" name="register" onsubmit="return confirm_password()">
         <div>
             <label for="fname">First Name:</label><br>
-            <input type="text" id="fname" name="fname" required><br>
+            <input type="text" id="firstname" name="firstname" required><br>
 
             <label for="lname">Last Name:</label><br>
-            <input type="text" id="lname" name="lname" required><br>
+            <input type="text" id="lastname" name="lastname" required><br>
 
             <label for="email">Email:</label><br>
             <input type="text" id="email" name="email" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" required><br>
